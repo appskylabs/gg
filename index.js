@@ -25,7 +25,9 @@ router.get('/getScreenshot', (request, response) => {
       childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
         // handle results
         console.log("something happened: \n" + stdout);
-        response.json({message: 'Got screenshot of ' + urlTest});
+        var screenshotURL = path.join(__dirname, 'test.png')
+        response.json({message: 'Got screenshot of ' + urlTest + " screenshot image url: " + screenshotURL});
+        
       })
 });
 
