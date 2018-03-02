@@ -1,0 +1,16 @@
+{
+  "name": "nodephantom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Taylor Korensky <taylor@appskylabs.com> (http://appskylabs.com)",
+  "license": "ISC",
+  "dependencies": {
+    "phantomjs-prebuilt": "^2.1.16",
+    "url": "^0.11.0"
+  }
+}
