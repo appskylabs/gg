@@ -26,8 +26,8 @@ router.get('/getScreenshot', (request, response) => {
         // handle results
         console.log("something happened: \n" + stdout);
         var screenshotURL = path.join(__dirname, 'test.png')
+        response.json({message: 'Got screenshot of ' + urlTest + " screenshot image url: " + screenshotURL});
         response.sendFile(screenshotURL);
-       // response.json({message: 'Got screenshot of ' + urlTest + " screenshot image url: " + screenshotURL});
         
       })
 });
