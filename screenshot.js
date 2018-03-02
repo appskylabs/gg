@@ -7,7 +7,7 @@ if (system.args.length === 1) {
 }
 else{
  
-    webpage.viewportSize = { width: 1200, height: 1000};
+    webpage.viewportSize = { width: 1280, height: 1024};
     webpage.scrollPosition = { top: 0, left: 0 };
     var urlAddress = system.args[1].toLowerCase();
     t = Date.now();
@@ -28,24 +28,27 @@ else{
               });
             console.log("Webpage height: " + height);
             console.log("Capturing webpage...");
-            
-           
-            for(var heightVar = 0; heightVar < height; heightVar++){
-                setTimeout(function(){
-                    webpage.scrollPosition = { top: heightVar, left: 0 };
-                }, 100);
-            }
-            //webpage.scrollPosition = { top: height, left: 0 };
+       
+              webpage.scrollPosition = { top: height/3, left: 0 };
+
+              setTimeout(function(){
+                  webpage.scrollPosition = { top: height/2, left: 0 };
+              }, 2000);
+  
+              setTimeout(function(){
+                  webpage.scrollPosition = { top: height/2 + height/5, left: 0 };
+              }, 4000);
+  
+              setTimeout(function(){
+                  webpage.scrollPosition = { top: height-150, left: 0 };
+              }, 6000);
     
-          //  var d = new Date();
-          //  var name = d.now();
-            // Wait 10 seconds for images to download
             setTimeout(function(){
                     webpage.scrollPosition = { top: 0, left: 0 };
                   webpage.render('test.png');
                   console.log("Saved file");
                   phantom.exit();
-            }, 10000);
+            }, 9000);
         }
     
     });
